@@ -292,9 +292,11 @@ footer a:hover{color:#fff;text-decoration:underline}
 
 <section class="hero" aria-label="Introductie">
   <img class="poster" src="video/hero-poster.jpg" alt="">
-  <video autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg">
-    <source src="video/hero.mp4" type="video/mp4">
-  </video>
+  <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg"></video>
+  <script>
+    // HD-versie voor grote schermen, lichte versie voor mobiel
+    (function(){var v=document.getElementById('hero-video');v.src=matchMedia('(min-width: 861px)').matches?'video/hero-hd.mp4':'video/hero.mp4';})();
+  </script>
   <div class="wrap hero-inhoud">
     <span class="label">Familiebedrijf in de Zuidplaspolder</span>
     <h1>Spruiten uit <span>Zevenhuizen.</span></h1>
