@@ -18,9 +18,10 @@
 <meta name="theme-color" content="#23361c">
 <link rel="icon" href="img/logo-icoon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="video/hero-poster.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -32,7 +33,7 @@
   "url": "https://www.bosspruiten.nl/",
   "telephone": "+31628760726",
   "logo": "https://www.bosspruiten.nl/img/logo/icoon-512.png",
-  "address": {"@type": "PostalAddress", "addressLocality": "Zevenhuizen", "addressRegion": "Zuid-Holland", "addressCountry": "NL"},
+  "address": {"@type": "PostalAddress", "streetAddress": "Noordeinde 27", "postalCode": "2761 BN", "addressLocality": "Zevenhuizen", "addressRegion": "Zuid-Holland", "addressCountry": "NL"},
   "image": "https://www.bosspruiten.nl/img/og-image.jpg",
   "knowsAbout": ["Spruitenteelt", "Aardappelteelt", "Uienteelt", "Zomertarwe"]
 }
@@ -150,6 +151,10 @@ section{padding:96px 0}
 .kal .m{font-family:Montserrat,sans-serif;font-weight:600;text-align:center;color:var(--tekst-zacht);padding-bottom:4px}
 .kal .g{font-family:Montserrat,sans-serif;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.04em;display:flex;align-items:center}
 .kal .c{height:26px;border-radius:3px;background:#f0f1ec}
+.kal .kort{display:none}
+.kal .m.nu{color:var(--groen-donker);font-weight:800}
+.kal .m.nu::after{content:"";display:block;width:6px;height:6px;border-radius:50%;background:var(--spruit);margin:3px auto 0}
+.kal .c.nu{box-shadow:inset 0 0 0 2px var(--groen-donker)}
 .kal .p{background:var(--salie)}
 .kal .o{background:var(--groen)}
 .legenda{display:flex;gap:1.5rem;margin-top:1rem;font-size:.85rem;color:var(--tekst-zacht)}
@@ -159,7 +164,7 @@ section{padding:96px 0}
 .klein{font-size:.8rem;color:var(--tekst-zacht);margin-top:.6rem}
 
 /* Parallax banner */
-.banner{position:relative;padding:150px 0;color:#fff;text-align:center;background:url(img/zonsondergang.jpg) center/cover fixed}
+.banner{position:relative;padding:150px 0;color:#fff;text-align:center;background:url(img/zonsondergang.webp) center/cover fixed}
 .banner::before{content:"";position:absolute;inset:0;background:rgba(15,25,10,.5)}
 .banner .wrap{position:relative}
 .banner h2{font-size:clamp(1.9rem,4.5vw,3.2rem);margin-bottom:.6rem}
@@ -197,8 +202,22 @@ section{padding:96px 0}
 .mini.wa{background:#25d366;color:#10311b}
 .mini.wa:hover{background:#3be07a}
 .gegevens a:hover{text-decoration:underline}
-.kaart{margin-top:2rem;border-radius:6px;overflow:hidden;aspect-ratio:16/10;filter:saturate(.8)}
-.kaart iframe{width:100%;height:100%;border:0}
+.kaart{margin-top:2rem;border-radius:8px;overflow:hidden;aspect-ratio:16/10;background:#1c2b16;box-shadow:0 10px 30px rgba(0,0,0,.25);position:relative}
+.kaart iframe{width:100%;height:100%;border:0;display:block}
+.kaart-voorvertoning{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;inset:0;display:block}
+.kaart-voorvertoning img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.kaart-voorvertoning::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,25,10,.05),rgba(15,25,10,.55))}
+.kaart-voorvertoning:hover img{transform:scale(1.04)}
+.kaart-voorvertoning:focus-visible{outline:3px solid var(--salie);outline-offset:-3px}
+.kaart-pin{position:absolute;z-index:2;left:50%;top:42%;transform:translate(-50%,-100%);width:46px;height:46px;animation:pin 2.2s ease-in-out infinite}
+.kaart-pin svg{width:100%;height:100%;fill:var(--spruit);filter:drop-shadow(0 4px 6px rgba(0,0,0,.4))}
+@keyframes pin{0%,100%{transform:translate(-50%,-100%)}50%{transform:translate(-50%,-112%)}}
+.kaart-kaartje{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;background:#fff;color:var(--tekst);border-radius:6px;padding:14px 16px;font-size:.9rem;line-height:1.4;display:grid;gap:2px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.kaart-kaartje b{font-family:Montserrat,sans-serif;font-size:.95rem}
+.kaart-cta{font-family:Montserrat,sans-serif;font-weight:700;font-size:.78rem;color:var(--groen);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.kaart-cta::after{content:" \2192"}
+.kaart-noot{font-size:.78rem;opacity:.6!important;margin-top:.6rem}
+.kaart-noot a{color:inherit}
 
 footer{background:#172512;color:rgba(255,255,255,.65);font-size:.88rem;padding:48px 0 28px}
 footer a{color:rgba(255,255,255,.85);text-decoration:none}
@@ -257,7 +276,36 @@ footer a:hover{color:#fff;text-decoration:underline}
   .voet-top > div:first-child{grid-column:1/-1}
   .scroll-hint{display:none}
 }
+@media (max-width:640px){
+  .kalender{padding:22px 16px;overflow:visible}
+  .kal{grid-template-columns:repeat(12,1fr);gap:3px;min-width:0}
+  .kal .hoek{display:none}
+  .kal .lang{display:none}
+  .kal .kort{display:inline}
+  .kal .m{font-size:.72rem;padding-bottom:2px}
+  .kal .g{grid-column:1/-1;margin-top:12px;margin-bottom:2px;font-size:.78rem}
+  .kal .c{height:22px;border-radius:2px}
+  .legenda{flex-wrap:wrap;gap:.6rem 1.2rem}
+}
 @media (max-width:520px){
+  .hero video,.hero .poster{object-position:62% center}
+  .teelten{gap:12px}
+  .teelt{flex-direction:row;align-items:stretch}
+  .teelt .foto{flex:0 0 38%}
+  .teelt img{height:100%;aspect-ratio:auto}
+  .teelt div.txt{padding:14px 14px 16px}
+  .teelt h3{font-size:.95rem}
+  .teelt p{font-size:.88rem;line-height:1.45}
+  .teelt .tag{display:table;margin:.35rem 0 0}
+  .feiten{gap:12px;margin-top:36px}
+  .feit{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:18px}
+  .feit .icoon{margin:0;grid-row:span 2}
+  .feit h3{margin-bottom:.2rem;font-size:1rem}
+  .feit p{font-size:.92rem;line-height:1.5}
+  .cijfer{padding:22px 10px}
+  .cijfer b{font-size:1.6rem}
+  .cijfer span{font-size:.72rem}
+  .kaart{aspect-ratio:4/3}
   .wrap{padding:0 16px}
   .teelten{grid-template-columns:1fr}
   .hero p{font-size:1.05rem}
@@ -291,11 +339,16 @@ footer a:hover{color:#fff;text-decoration:underline}
 </header>
 
 <section class="hero" aria-label="Introductie">
-  <img class="poster" src="video/hero-poster.jpg" alt="">
-  <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="video/hero-poster.jpg"></video>
+  <img class="poster" src="video/hero-poster.webp" alt="" fetchpriority="high">
+  <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="video/hero-poster.webp"></video>
   <script>
     // HD-versie voor grote schermen, lichte versie voor mobiel
-    (function(){var v=document.getElementById('hero-video');v.src=matchMedia('(min-width: 861px)').matches?'video/hero-hd.mp4':'video/hero.mp4';})();
+    // HD voor grote schermen, lichte versie voor mobiel; geen video bij databesparing of trage verbinding
+    (function(){
+      var v=document.getElementById('hero-video'),c=navigator.connection||{};
+      if(c.saveData||/(^|-)2g$/.test(c.effectiveType||'')||matchMedia('(prefers-reduced-motion: reduce)').matches){v.remove();return;}
+      v.src=matchMedia('(min-width: 861px)').matches?'video/hero-hd.mp4':'video/hero.mp4';
+    })();
   </script>
   <div class="wrap hero-inhoud">
     <span class="label">Familiebedrijf in de Zuidplaspolder</span>
@@ -327,7 +380,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       <a href="#contact" class="btn">Neem contact op</a>
     </div>
     <div class="beeld fade">
-      <img src="img/kist.jpg" alt="Houten bewaarkist met opschrift H. &amp; C. Bos Zevenhuizen" loading="lazy">
+      <img src="img/kist.webp" alt="Houten bewaarkist met opschrift H. &amp; C. Bos Zevenhuizen" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -342,7 +395,7 @@ footer a:hover{color:#fff;text-decoration:underline}
         <p>Juist die lange oogstperiode maakt spruiten bijzonder. Een vleugje vorst maakt ze zelfs zoeter. Zo leveren wij maandenlang verse, stevige spruiten van constante kwaliteit.</p>
       </div>
       <div class="beeld fade">
-        <img src="img/spruiten.jpg" alt="Jonge spruitenplantjes in een rij op de akker" loading="lazy">
+        <img src="img/spruiten.webp" alt="Jonge spruitenplantjes in een rij op de akker" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -375,28 +428,28 @@ footer a:hover{color:#fff;text-decoration:underline}
     </div>
     <div class="teelten">
       <article class="teelt hoofd fade">
-        <div class="foto"><img src="img/spruiten.jpg" alt="Spruitenplantjes" loading="lazy"></div>
+        <div class="foto"><img src="img/spruiten.webp" alt="Spruitenplantjes" loading="lazy" decoding="async"></div>
         <div class="txt">
           <h3>Spruiten <span class="tag">Hoofdgewas</span></h3>
           <p>Ons specialisme. Lange oogstperiode, van herfst tot winter.</p>
         </div>
       </article>
       <article class="teelt fade">
-        <div class="foto"><img src="img/aardappelen.jpg" alt="Aardappelen" loading="lazy"></div>
+        <div class="foto"><img src="img/aardappelen.webp" alt="Aardappelen" loading="lazy" decoding="async"></div>
         <div class="txt">
           <h3>Aardappelen</h3>
           <p>Gepoot in het voorjaar, gerooid in de nazomer en zorgvuldig bewaard in onze eigen bewaarplaats.</p>
         </div>
       </article>
       <article class="teelt fade">
-        <div class="foto"><img src="img/uien.jpg" alt="Uien op de akker" loading="lazy"></div>
+        <div class="foto"><img src="img/uien.webp" alt="Uien op de akker" loading="lazy" decoding="async"></div>
         <div class="txt">
           <h3>Uien</h3>
           <p>Gezaaid in het vroege voorjaar, geoogst en gedroogd voor een lange houdbaarheid.</p>
         </div>
       </article>
       <article class="teelt fade">
-        <div class="foto"><img src="img/zomertarwe.jpg" alt="Zomertarwe" loading="lazy"></div>
+        <div class="foto"><img src="img/zomertarwe.webp" alt="Zomertarwe" loading="lazy" decoding="async"></div>
         <div class="txt">
           <h3>Zomertarwe</h3>
           <p>Een waardevolle schakel in onze vruchtwisseling, goed voor de bodemstructuur.</p>
@@ -429,7 +482,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       <p>Met eigen machines voor poten, rooien en transport houden we de regie over elke stap. Dat geeft rust, voor ons en voor onze afnemers.</p>
     </div>
     <div class="beeld fade">
-      <img src="img/schuur.jpg" alt="Luchtfoto van de bedrijfsschuur met trekker en heftruck" loading="lazy">
+      <img src="img/schuur.webp" alt="Luchtfoto van de bedrijfsschuur met trekker en heftruck" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -447,7 +500,7 @@ footer a:hover{color:#fff;text-decoration:underline}
       </ul>
     </div>
     <div class="beeld fade">
-      <img src="img/luchtfoto.jpg" alt="Luchtfoto van de akkers in de Zuidplaspolder" loading="lazy">
+      <img src="img/luchtfoto.webp" alt="Luchtfoto van de akkers in de Zuidplaspolder" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -460,18 +513,18 @@ footer a:hover{color:#fff;text-decoration:underline}
       <p>Een kijkje op onze akkers tijdens de aardappeloogst, van de eerste rij tot de bewaarschuur.</p>
     </div>
     <div class="film fade">
-      <video controls preload="none" poster="video/film-poster.jpg" playsinline>
+      <video controls preload="none" poster="video/film-poster.webp" playsinline>
         <source src="video/film.mp4" type="video/mp4">
       </video>
     </div>
     <div class="galerij fade">
-      <img class="groot" src="img/zonsondergang.jpg" alt="Aardappelrooier bij zonsondergang" loading="lazy">
-      <img src="img/oogst-kipper.jpg" alt="Trekker met kipper op de akker" loading="lazy">
-      <img src="img/rooier.jpg" alt="Aardappelrooier van dichtbij" loading="lazy">
-      <img src="img/bewaring.jpg" alt="Aardappelen in de bewaarplaats" loading="lazy">
-      <img src="img/rooier-lucht.jpg" alt="Rooier op het veld van bovenaf" loading="lazy">
-      <img src="img/uien.jpg" alt="Uien" loading="lazy">
-      <img src="img/aardappelen.jpg" alt="Aardappelen" loading="lazy">
+      <img class="groot" src="img/zonsondergang.webp" alt="Aardappelrooier bij zonsondergang" loading="lazy" decoding="async">
+      <img src="img/oogst-kipper.webp" alt="Trekker met kipper op de akker" loading="lazy" decoding="async">
+      <img src="img/rooier.webp" alt="Aardappelrooier van dichtbij" loading="lazy" decoding="async">
+      <img src="img/bewaring.webp" alt="Aardappelen in de bewaarplaats" loading="lazy" decoding="async">
+      <img src="img/rooier-lucht.webp" alt="Rooier op het veld van bovenaf" loading="lazy" decoding="async">
+      <img src="img/uien.webp" alt="Uien" loading="lazy" decoding="async">
+      <img src="img/aardappelen.webp" alt="Aardappelen" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -509,13 +562,23 @@ footer a:hover{color:#fff;text-decoration:underline}
       <span class="label" style="color:var(--salie)">Contact</span>
       <h2>Kennismaken<span class="punt">?</span></h2>
       <p>Heb je een vraag over onze teelten, ben je afnemer of wil je samenwerken? Neem gerust contact met ons op. We denken graag met je mee.</p>
-      <div class="kaart">
-        <iframe title="Kaart van Zevenhuizen" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=4.52%2C51.99%2C4.62%2C52.04&amp;layer=mapnik"></iframe>
+      <div class="kaart" id="kaart">
+        <button class="kaart-voorvertoning" type="button" aria-label="Kaart laden">
+          <img src="img/luchtfoto.webp" alt="" loading="lazy" decoding="async">
+          <span class="kaart-pin"><svg viewBox="0 0 24 24"><path d="M12 22s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3" fill="#fff"/></svg></span>
+          <span class="kaart-kaartje">
+            <b>H&amp;C Bos</b>
+            Noordeinde 27, 2761 BN Zevenhuizen
+            <span class="kaart-cta">Bekijk op de kaart</span>
+          </span>
+        </button>
       </div>
+      <p class="kaart-noot">Door de kaart te laden worden gegevens gedeeld met Google. <a href="privacy.html">Privacy</a></p>
     </div>
     <ul class="gegevens fade">
       <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-        <div><b>Adres</b>V.O.F. H. en C. Bos<br>Zevenhuizen (gemeente Zuidplas)<br>Zuid-Holland</div></li>
+        <div><b>Adres</b>V.O.F. H. en C. Bos<br>Noordeinde 27<br>2761 BN Zevenhuizen
+          <div class="knoppen"><a class="mini" href="https://www.google.com/maps/dir/?api=1&amp;destination=Noordeinde+27%2C+2761+BN+Zevenhuizen" target="_blank" rel="noopener">Route plannen</a></div></div></li>
       <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
         <div><b>Chris Bos</b><a href="tel:+31628760726">06 28 76 07 26</a>
           <div class="knoppen"><a class="mini" href="tel:+31628760726">Bellen</a><a class="mini wa" href="https://wa.me/31628760726" target="_blank" rel="noopener">WhatsApp</a></div></div></li>
@@ -530,7 +593,7 @@ footer a:hover{color:#fff;text-decoration:underline}
   <div class="wrap">
     <div class="voet-top">
       <div>
-        <img src="img/logo/logo-wit.png" alt="H&amp;C Bos Akkerbouw Zevenhuizen" loading="lazy">
+        <img src="img/logo/logo-wit.png" alt="H&amp;C Bos Akkerbouw Zevenhuizen" loading="lazy" decoding="async">
         <p>Familiebedrijf van Huib en Chris Bos. Spruiten, aardappelen, uien en zomertarwe uit de Zuidplaspolder.</p>
       </div>
       <div>
@@ -584,8 +647,18 @@ const teelt={
   'Zomertarwe':{p:[2,3],o:[8]}
 };
 const kal=document.getElementById('kal');
-kal.innerHTML='<div></div>'+maanden.map(m=>`<div class="m">${m}</div>`).join('')+
-  Object.entries(teelt).map(([n,t])=>`<div class="g">${n}</div>`+maanden.map((_,i)=>{const m=i+1;const k=t.o.includes(m)?'o':t.p.includes(m)?'p':'';return `<div class="c ${k}" title="${n} ${maanden[i]}"></div>`}).join('')).join('');
+const nu=new Date().getMonth()+1;
+kal.innerHTML='<div class="hoek"></div>'+maanden.map((m,i)=>`<div class="m${i+1===nu?' nu':''}"><span class="lang">${m}</span><span class="kort">${m[0].toUpperCase()}</span></div>`).join('')+
+  Object.entries(teelt).map(([n,t])=>`<div class="g">${n}</div>`+maanden.map((_,i)=>{const m=i+1;const k=t.o.includes(m)?'o':t.p.includes(m)?'p':'';return `<div class="c ${k}${m===nu?' nu':''}" title="${n} ${maanden[i]}"></div>`}).join('')).join('');
+
+// Kaart pas laden na klik (sneller en privacyvriendelijk)
+document.querySelector('.kaart-voorvertoning').addEventListener('click',function(){
+  const f=document.createElement('iframe');
+  f.title='Kaart: H&C Bos, Noordeinde 27 Zevenhuizen';
+  f.allowFullscreen=true;f.referrerPolicy='no-referrer-when-downgrade';
+  f.src='https://maps.google.com/maps?q=Noordeinde+27,+2761+BN+Zevenhuizen&t=k&z=15&hl=nl&output=embed';
+  this.replaceWith(f);
+});
 
 // Lightbox
 const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img');
