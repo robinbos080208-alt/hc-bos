@@ -30,6 +30,7 @@
   "description": "Akkerbouwbedrijf in Zevenhuizen. Teelt van spruiten, aardappelen, uien en zomertarwe.",
   "founder": [{"@type": "Person", "name": "Huib Bos"}, {"@type": "Person", "name": "Chris Bos"}],
   "url": "https://www.hcbos.nl/",
+  "telephone": "+31628760726",
   "logo": "https://www.hcbos.nl/img/logo/icoon-512.png",
   "address": {"@type": "PostalAddress", "addressLocality": "Zevenhuizen", "addressRegion": "Zuid-Holland", "addressCountry": "NL"},
   "image": "https://www.hcbos.nl/img/og-image.jpg",
@@ -190,6 +191,11 @@ section{padding:96px 0}
 .gegevens svg{flex:none;width:22px;height:22px;stroke:var(--salie);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
 .gegevens b{display:block;font-family:Montserrat,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--salie);margin-bottom:.1rem}
 .gegevens a{text-decoration:none}
+.knoppen{display:flex;gap:8px;margin-top:.6rem}
+.mini{font-family:Montserrat,sans-serif;font-size:.78rem;font-weight:700;padding:.45rem .95rem;border-radius:999px;background:rgba(255,255,255,.12);color:#fff}
+.mini:hover{background:rgba(255,255,255,.22);text-decoration:none!important}
+.mini.wa{background:#25d366;color:#10311b}
+.mini.wa:hover{background:#3be07a}
 .gegevens a:hover{text-decoration:underline}
 .kaart{margin-top:2rem;border-radius:6px;overflow:hidden;aspect-ratio:16/10;filter:saturate(.8)}
 .kaart iframe{width:100%;height:100%;border:0}
@@ -508,12 +514,12 @@ footer a:hover{color:#fff;text-decoration:underline}
     <ul class="gegevens fade">
       <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
         <div><b>Adres</b>V.O.F. H. en C. Bos<br>Zevenhuizen (gemeente Zuidplas)<br>Zuid-Holland</div></li>
-      <li><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
-        <div><b>E-mail</b><a href="mailto:info@hcbos.nl">info@hcbos.nl</a></div></li>
       <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
-        <div><b>Telefoon</b><a href="tel:+31600000000">06 00 00 00 00</a></div></li>
-      <li><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.5 1-4.5 3-5 2 .5 3 2.5 3 5"/></svg>
-        <div><b>Eigenaren</b>Huib Bos en Chris Bos</div></li>
+        <div><b>Chris Bos</b><a href="tel:+31628760726">06 28 76 07 26</a>
+          <div class="knoppen"><a class="mini" href="tel:+31628760726">Bellen</a><a class="mini wa" href="https://wa.me/31628760726" target="_blank" rel="noopener">WhatsApp</a></div></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <div><b>Huib Bos</b><a href="tel:+31648500067">06 48 50 00 67</a>
+          <div class="knoppen"><a class="mini" href="tel:+31648500067">Bellen</a><a class="mini wa" href="https://wa.me/31648500067" target="_blank" rel="noopener">WhatsApp</a></div></div></li>
     </ul>
   </div>
 </section>
@@ -538,8 +544,8 @@ footer a:hover{color:#fff;text-decoration:underline}
         <h4>Contact</h4>
         <ul>
           <li>Zevenhuizen (ZH)</li>
-          <li><a href="mailto:info@hcbos.nl">info@hcbos.nl</a></li>
-          <li><a href="tel:+31600000000">06 00 00 00 00</a></li>
+          <li>Chris: <a href="tel:+31628760726">06 28 76 07 26</a></li>
+          <li>Huib: <a href="tel:+31648500067">06 48 50 00 67</a></li>
         </ul>
       </div>
     </div>
