@@ -297,6 +297,13 @@ footer a:hover{color:#fff;text-decoration:underline}
   .scroll-hint{display:none}
 }
 @media (max-width:640px){
+  /* Mobiele hero: vrijwel volledig shot (4:3) bovenaan, tekst eronder op groen */
+  .hero{min-height:0;display:block;padding-top:75vw;background:var(--groen-donker)}
+  .hero video,.hero .poster{inset:0 0 auto 0;height:75vw;object-position:center}
+  .hero::after{inset:0 0 auto 0;height:75vw;background:linear-gradient(180deg,rgba(15,25,10,.45) 0%,rgba(15,25,10,0) 26%,rgba(35,54,28,0) 72%,var(--groen-donker) 100%)}
+  .hero-inhoud{padding-top:6px;padding-bottom:48px}
+  .hero h1{font-size:2.35rem;margin-bottom:.9rem}
+  .hero p{margin-bottom:1.5rem}
   .kalender{padding:22px 16px;overflow:visible}
   .kal{grid-template-columns:repeat(12,1fr);gap:3px;min-width:0}
   .kal .hoek{display:none}
@@ -308,7 +315,6 @@ footer a:hover{color:#fff;text-decoration:underline}
   .legenda{flex-wrap:wrap;gap:.6rem 1.2rem}
 }
 @media (max-width:520px){
-  .hero video,.hero .poster{object-position:62% center}
   .teelten{gap:12px}
   .teelt{flex-direction:row;align-items:stretch}
   .teelt .foto{flex:0 0 38%}
