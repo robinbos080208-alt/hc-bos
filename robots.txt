@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
 
+# AI-zoekmachines en assistenten expliciet welkom
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Google-Extended
+User-agent: Bingbot
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://www.bosspruiten.nl/sitemap.xml
