@@ -560,7 +560,7 @@ footer a:hover{color:#fff;text-decoration:underline}
         </div>
       </div>
       <div class="beeld fade">
-        <video class="band-video" id="band-video" muted loop playsinline preload="none" poster="video/spruiten-handen.webp" aria-label="Chris Bos houdt een handvol verse spruiten vast"></video>
+        <video class="band-video" id="band-video" muted loop playsinline preload="none" poster="video/spruiten-veld-sortering.webp" aria-label="Spruiten aan de stengel op het veld en op de sorteerband"></video>
       </div>
     </div>
 
@@ -886,14 +886,14 @@ document.querySelector('.kaart-voorvertoning').addEventListener('click',function
   this.replaceWith(f);
 });
 
-// Spruiten-in-de-hand-video: pas laden en spelen als hij in beeld komt (AV1 als dat soepel kan)
+// Spruitenvideo (veld + sortering): pas laden en spelen als hij in beeld komt (AV1 als dat soepel kan)
 (function(){
   const v=document.getElementById('band-video');if(!v)return;
   const av1='video/mp4; codecs="av01.0.05M.08"';let geladen=false;
   function laad(){if(geladen)return;geladen=true;
     const kies=b=>{v.src=b;v.play().catch(()=>{})};
-    if(v.canPlayType(av1)&&navigator.mediaCapabilities){navigator.mediaCapabilities.decodingInfo({type:'file',video:{contentType:av1,width:864,height:1080,bitrate:2e6,framerate:25}}).then(r=>kies(r.supported&&r.smooth&&r.powerEfficient?'video/spruiten-handen.av1.mp4':'video/spruiten-handen.mp4')).catch(()=>kies('video/spruiten-handen.mp4'))}
-    else kies('video/spruiten-handen.mp4');}
+    if(v.canPlayType(av1)&&navigator.mediaCapabilities){navigator.mediaCapabilities.decodingInfo({type:'file',video:{contentType:av1,width:864,height:1080,bitrate:2e6,framerate:25}}).then(r=>kies(r.supported&&r.smooth&&r.powerEfficient?'video/spruiten-veld-sortering.av1.mp4':'video/spruiten-veld-sortering.mp4')).catch(()=>kies('video/spruiten-veld-sortering.mp4'))}
+    else kies('video/spruiten-veld-sortering.mp4');}
   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){laad();v.play().catch(()=>{})}else if(geladen)v.pause()}),{rootMargin:'200px'}).observe(v);
 })();
