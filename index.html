@@ -360,7 +360,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 .duurzaam-lijst b{color:var(--tekst)}
 
 /* Certificeringen (flipkaarten) */
-.certs{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.certs{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:22px;max-width:770px;margin:0 auto}
 .certs li{flex:0 1 240px}
 .cert{display:block;width:100%;height:250px;padding:0;border:0;background:none;font:inherit;color:inherit;text-align:center;cursor:pointer;perspective:1000px;-webkit-tap-highlight-color:transparent}
 .cert-binnen{position:relative;display:block;width:100%;height:100%;transition:transform .6s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
@@ -380,7 +380,8 @@ footer a:hover{color:#fff;text-decoration:underline}
 .cert-voor .cert-naam{margin-bottom:.6rem}
 .cert-achter .cert-naam{font-size:.82rem;color:var(--salie);margin-bottom:.6rem}
 .cert-uitleg{font-size:.92rem;line-height:1.5}
-@media (max-width:640px){.certs{gap:12px}.certs li{flex:0 1 calc(50% - 6px)}.cert{height:290px}.cert-voor,.cert-achter{padding:16px 12px}.cert-naam{font-size:.85rem}.cert-achter .cert-naam{font-size:.72rem}.cert-uitleg{font-size:.82rem;line-height:1.45}.cert-icoon{width:38px;height:38px}.cert-logo{height:60px}}
+@media (max-width:640px){.certs{gap:12px}.certs li{flex:0 1 calc(50% - 6px)}.cert{height:252px}.cert-voor,.cert-achter{padding:16px 12px}.cert-naam{font-size:.85rem}.cert-achter .cert-naam{font-size:.72rem}.cert-uitleg{font-size:.82rem;line-height:1.45}.cert-icoon{width:38px;height:38px}.cert-logo{height:60px}}
+@media (max-width:359px){.cert{height:300px}}
 @media (prefers-reduced-motion:reduce){.cert-binnen{transition:none}}
 
 /* Merkenband */
@@ -738,12 +739,6 @@ footer a:hover{color:#fff;text-decoration:underline}
         <span class="cert-binnen">
           <span class="cert-voor"><img class="cert-logo" src="img/certificaten/nedertarwe.png" alt="" loading="lazy" decoding="async"><span class="cert-soort">Certificaat tarwe</span><span class="cert-naam">Nedertarwe</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">Nedertarwe</span><span class="cert-uitleg">Onze tarwe telen we voor Nedertarwe: duurzaam geteelde baktarwe van Nederlandse akkers, met maatregelen voor biodiversiteit op en rond het perceel.</span></span>
-        </span>
-      </button></li>
-      <li class="fade"><button type="button" class="cert" aria-pressed="false">
-        <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Certificaat spruiten</span><span class="cert-naam">Voedselveiligheid spruiten</span><span class="cert-hint">Klik voor uitleg</span></span>
-          <span class="cert-achter"><span class="cert-naam">Voedselveiligheid spruiten</span><span class="cert-uitleg">Van planten tot oogst en opslag leggen we hygiëne, gewasbescherming en herkomst vast. Zo is elke partij spruiten veilig en terug te volgen naar het perceel.</span></span>
         </span>
       </button></li>
     </ul>
