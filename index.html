@@ -371,6 +371,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 .cert:focus-visible{outline:none}
 .cert:focus-visible .cert-voor,.cert:focus-visible .cert-achter{outline:3px solid var(--spruit);outline-offset:3px}
 .cert-achter{background:var(--groen-donker);color:var(--wit);transform:rotateY(180deg)}
+.cert-logo{height:78px;width:auto;max-width:100%;object-fit:contain;margin-bottom:14px}
 .cert-icoon{width:46px;height:46px;margin-bottom:14px;fill:var(--salie-licht);stroke:var(--groen);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .cert-soort{font-family:Montserrat,system-ui,sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--spruit);margin-bottom:.35rem}
 .cert-naam{font-family:Montserrat,system-ui,sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.25}
@@ -379,7 +380,7 @@ footer a:hover{color:#fff;text-decoration:underline}
 .cert-voor .cert-naam{margin-bottom:.6rem}
 .cert-achter .cert-naam{font-size:.82rem;color:var(--salie);margin-bottom:.6rem}
 .cert-uitleg{font-size:.92rem;line-height:1.5}
-@media (max-width:640px){.certs{gap:12px}.certs li{flex:0 1 calc(50% - 6px)}.cert{height:290px}.cert-voor,.cert-achter{padding:16px 12px}.cert-naam{font-size:.85rem}.cert-achter .cert-naam{font-size:.72rem}.cert-uitleg{font-size:.82rem;line-height:1.45}.cert-icoon{width:38px;height:38px}}
+@media (max-width:640px){.certs{gap:12px}.certs li{flex:0 1 calc(50% - 6px)}.cert{height:290px}.cert-voor,.cert-achter{padding:16px 12px}.cert-naam{font-size:.85rem}.cert-achter .cert-naam{font-size:.72rem}.cert-uitleg{font-size:.82rem;line-height:1.45}.cert-icoon{width:38px;height:38px}.cert-logo{height:60px}}
 @media (prefers-reduced-motion:reduce){.cert-binnen{transition:none}}
 
 /* Merkenband */
@@ -705,37 +706,37 @@ footer a:hover{color:#fff;text-decoration:underline}
     <ul class="certs">
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Basiscertificaat</span><span class="cert-naam">GLOBALG.A.P.</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/globalgap.svg" alt="" loading="lazy" decoding="async"><span class="cert-soort">Basiscertificaat</span><span class="cert-naam">GLOBALG.A.P.</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">GLOBALG.A.P.</span><span class="cert-uitleg">Wereldwijde standaard voor goede landbouwpraktijk. Een onafhankelijke keurder controleert elk jaar onze voedselveiligheid, gewasbescherming, hygiëne en werkomstandigheden.</span></span>
         </span>
       </button></li>
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Keurmerk</span><span class="cert-naam">On the way to PlanetProof</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/planetproof.svg" alt="" loading="lazy" decoding="async"><span class="cert-soort">Keurmerk</span><span class="cert-naam">On the way to PlanetProof</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">On the way to PlanetProof</span><span class="cert-uitleg">Onafhankelijk keurmerk voor duurzamer telen: zuiniger met gewasbescherming, meststoffen en energie, met aandacht voor bodem en biodiversiteit. De eisen worden elk jaar aangescherpt.</span></span>
         </span>
       </button></li>
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Keurmerk</span><span class="cert-naam">Beter voor Natuur &amp; Boer</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/beter-voor-natuur-en-boer.webp" alt="" loading="lazy" decoding="async"><span class="cert-soort">Keurmerk</span><span class="cert-naam">Beter voor Natuur &amp; Boer</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">Beter voor Natuur &amp; Boer</span><span class="cert-uitleg">Programma dat samen met Albert Heijn is opgezet. Wij nemen extra stappen voor biodiversiteit, bodemgezondheid, water en CO₂, bovenop de wettelijke eisen.</span></span>
         </span>
       </button></li>
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Add-on GLOBALG.A.P.</span><span class="cert-naam">GROW</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/globalgap.svg" alt="" loading="lazy" decoding="async"><span class="cert-soort">Add-on GLOBALG.A.P.</span><span class="cert-naam">GROW</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">GROW</span><span class="cert-uitleg">Aanvulling op GLOBALG.A.P., opgesteld met Albert Heijn en Delhaize. Extra streng op hygiëne, residuen van gewasbeschermingsmiddelen en vreemde voorwerpen in het product.</span></span>
         </span>
       </button></li>
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Add-on GLOBALG.A.P.</span><span class="cert-naam">GRASP</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/globalgap.svg" alt="" loading="lazy" decoding="async"><span class="cert-soort">Add-on GLOBALG.A.P.</span><span class="cert-naam">GRASP</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">GRASP</span><span class="cert-uitleg">Aanvulling op GLOBALG.A.P. over goed werkgeverschap: eerlijke arbeidsvoorwaarden, een veilige en gezonde werkplek en een stem voor iedereen die bij ons werkt.</span></span>
         </span>
       </button></li>
       <li class="fade"><button type="button" class="cert" aria-pressed="false">
         <span class="cert-binnen">
-          <span class="cert-voor"><svg class="cert-icoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l7.5 3v5.6c0 4.6-3.1 8.6-7.5 9.9-4.4-1.3-7.5-5.3-7.5-9.9V5.5z"/><path d="M8.5 12.2l2.4 2.4 4.6-4.8"/></svg><span class="cert-soort">Certificaat tarwe</span><span class="cert-naam">Nedertarwe</span><span class="cert-hint">Klik voor uitleg</span></span>
+          <span class="cert-voor"><img class="cert-logo" src="img/certificaten/nedertarwe.png" alt="" loading="lazy" decoding="async"><span class="cert-soort">Certificaat tarwe</span><span class="cert-naam">Nedertarwe</span><span class="cert-hint">Klik voor uitleg</span></span>
           <span class="cert-achter"><span class="cert-naam">Nedertarwe</span><span class="cert-uitleg">Onze tarwe telen we voor Nedertarwe: duurzaam geteelde baktarwe van Nederlandse akkers, met maatregelen voor biodiversiteit op en rond het perceel.</span></span>
         </span>
       </button></li>
